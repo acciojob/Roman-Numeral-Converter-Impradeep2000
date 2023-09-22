@@ -10,6 +10,20 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let roman = '';
+
+  for (let i = 0; i < 13; i++) {
+    const symbol = obj[i][0];
+    const value = obj[i][1];
+    const count = Math.floor(num / value);
+
+    if (count > 0) {
+      roman += symbol.repeat(count);
+      num %= value;
+    }
+  }
+
+  return roman;
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
